@@ -1,0 +1,47 @@
+import java.io.*;
+import java.net.*;
+  
+class Server1 {//Server1 class that receives abd sends data
+  
+    public static void main(String args[])//main
+        throws Exception
+    {        
+        ServerSocket ser = new ServerSocket(888);//server Socket  
+        
+        Socket soc = ser.accept();// accept method to connect it to client socket
+        System.out.println("Connection Formed");  
+        
+        PrintStream p
+            = new PrintStream(soc.getOutputStream());//send data to the client using PrintStream  
+        
+        BufferedReader b
+            = new BufferedReader(
+                new InputStreamReader(
+                    soc.getInputStream()));//read data coming from the client using BufferedReader and OutputStreamReader
+        
+        BufferedReader br
+            = new BufferedReader(
+                new InputStreamReader(System.in));//read data from the keyboard BufferedReader and InputStreamReader  
+        
+        while (true) {  
+            String st, st1;      
+  
+            
+            while ((st = b.readLine()) != null) {
+                System.out.println("Client: "+st);
+                st1 = br.readLine(); 
+                
+                p.println(st1);
+            }
+  
+            // close connection
+            p.close();
+            b.close();
+            br.close();
+            ser.close();
+            soc.close(); 
+            
+            System.exit(0);  
+        } 
+    }
+}

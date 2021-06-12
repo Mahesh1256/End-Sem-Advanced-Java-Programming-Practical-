@@ -1,0 +1,36 @@
+import java.io.*;
+import java.net.*;
+  
+class Client1 {// Client1 class that sends data and receives also   
+  
+    public static void main(String args[])
+        throws Exception
+    {        
+        Socket soc = new Socket("localhost", 888);//client socket 
+        
+        DataOutputStream dos
+            = new DataOutputStream(
+                soc.getOutputStream());// send data to the server using DataOutputStream  
+       
+        BufferedReader b
+            = new BufferedReader(
+                new InputStreamReader(
+                    soc.getInputStream())); // to read data coming from the server using BufferedReader  
+        
+        BufferedReader br
+            = new BufferedReader(
+                new InputStreamReader(System.in));// to read data from the keyboard using InputStream
+        String st, st1;  
+        
+        while (!(st = br.readLine()).equals("exit")) {              
+            dos.writeBytes(st + "\n");              
+            st1 = b.readLine();  
+            System.out.println("Server: "+st1);
+        }  
+        // close connection.
+        dos.close();
+        b.close();
+        br.close();
+        soc.close();
+    }
+}
