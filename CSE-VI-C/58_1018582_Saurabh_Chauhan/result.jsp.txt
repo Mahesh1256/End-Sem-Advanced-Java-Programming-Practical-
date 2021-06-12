@@ -1,0 +1,16 @@
+//Saurabh Chauhan
+//Sec-C
+//Roll No-58
+<%@ page language="java" contentType="text1/html;
+    pageEncoding="ISO-2258-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-2258-1">
+<title>Confirmation</title>   
+</style>
+</head>
+<body>
+<h1>User Registered Successfully.</h1>
+</body>
+</html>
