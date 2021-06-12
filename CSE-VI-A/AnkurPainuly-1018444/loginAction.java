@@ -7,38 +7,33 @@ public class loginAction extends ActionSupport{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String x;
+	String x,y;
+	
 	public String getX() {
 		return x;
 	}
-
 
 	public void setX(String x) {
 		this.x = x;
 	}
 
-
 	public String getY() {
 		return y;
 	}
-
 
 	public void setY(String y) {
 		this.y = y;
 	}
 
-
-	private String y;
-	
-	
 	public String login() {
-		if(x=="ankur" && y=="123") {
 		return SUCCESS;
-		}
-		else return "input";
 		
 	}
 	
+	public void validate() {
+		if(x==null||x.trim().equals("")) addFieldError("x","enter name");
+		if(y==null||y.length()==0) addFieldError("y","enter password");
+	}
 	
 	
 	
