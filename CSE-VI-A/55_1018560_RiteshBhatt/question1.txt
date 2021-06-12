@@ -1,0 +1,35 @@
+package com.jdbc.project;
+import java.sql.*;
+
+public class Jdbc
+{
+    public static void main(String args[]) throws SQLException 
+      {
+	Connection myConnection = null;
+	Statement myStatement   = null;
+	ResultSet myResultSet   = null;
+	try
+	  {
+ 
+	           myConnection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/librarys", "root" , "");
+	           myStatement  =  myConnection.createStatement();
+                   myResultSet  =  myStatement.executeQuery("select * from book");
+                   while (myResultSet.next()) 
+	             {
+	                 System.out.println(myResultSet.getString("Acc_no") + ", " + myResultSet.getString("Title") + ", " + myResultSet.getString("Author") + ", " + myResultSet.getString("Publisher")+ ", " + 
+                         myResultSet.getString("Edition"));
+
+	              }
+                     }
+	catch (Exception e) 
+	{
+	         e.printStackTrace();
+	}
+	finally
+	 {
+	         myResultSet.close();
+                          myStatement.close();
+                          myConnection.close();
+                   }
+       }
+}
