@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="login" extends="struts-default">
+		<action name="login" class="com.siddharthnegi.struts.Login">
+			<result name="success">/result.jsp</result>
+			<result name="login">/input.jsp</result>
+		</action>
+	</package>	
+</struts>
