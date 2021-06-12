@@ -19,6 +19,6 @@ output.flush();
 str2 = input.readUTF(); 			 //to read message from server
 System.out.println("Server Says:-  "+str2);  	//to print message received from server
 }
-dataRead.close();
+input.close();
 s.close();
 }}
