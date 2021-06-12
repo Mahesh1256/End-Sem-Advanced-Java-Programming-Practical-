@@ -1,0 +1,25 @@
+/*Program Description : This program shows the client side code of a two way communication taking place between the client and the server.The communication will end when a string containing "adieu" is encountered
+Name : Harshita Bora
+Section : C
+University Roll No : 1018495
+Subject : Advanced Java Programming Lab (PCS-605)*/
+
+public class Client{
+public static void main(String args[])throws Exception{
+Socket s=new Socket("localhost",8080);
+DataInputStream dataRead=new DataInputStream(s.getInputStream());
+DataOutputStream dataWrite=new DataOutputStream(s.getOutputStream());
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+String str="",str2="";
+while(!str.equals("bye")){
+str=br.readLine();
+dataWrite.writeUTF(str);
+dataWrite.flush();
+str2=dataRead.readUTF();
+System.out.println("Alexa : "+str2);
+}
+
+dataRead.close();
+s.close();
+}
+}
