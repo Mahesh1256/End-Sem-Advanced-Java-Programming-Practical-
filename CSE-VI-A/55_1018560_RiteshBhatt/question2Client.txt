@@ -1,0 +1,42 @@
+import java.io.*;
+import java.net.*;
+
+public class Client
+  {
+       public static void main(String args[])throws Exception
+       {
+	  
+             // Create client socket
+          Socket socket=new Socket("localhost",8088);
+	
+             // to read data coming from the server
+	  DataInputStream dr=new DataInputStream(socket.getInputStream());
+
+             //write data
+	  DataOutputStream dw=new DataOutputStream(socket.getOutputStream());
+
+         
+             // to read data from the keyboard
+	  BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
+
+	  String str1="",str2="";
+
+	  while(!str1.equals("bye"))
+	   {
+                
+                // receive from the server
+	      str1=bufferedReader.readLine();
+
+	      dw.writeUTF(str1);
+	       
+              dw.flush();
+	       
+              str2=dr.readUTF();
+	      System.out.println("Hello Server : "+str2);
+	    }
+
+          // close connection.
+ 	dr.close();
+	socket.close();
+      }
+}
