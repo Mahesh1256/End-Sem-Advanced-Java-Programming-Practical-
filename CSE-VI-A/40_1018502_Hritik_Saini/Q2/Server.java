@@ -10,22 +10,22 @@ public class Server{
 		System.out.println("connection is stable now ");
 
 		
-		DataInputStream dataRead=new DataInputStream(s.getInputStream());
+		DataInputStream input=new DataInputStream(s.getInputStream());
 
-		DataOutputStream dataWrite=new DataOutputStream(s.getOutputStream());
+		DataOutputStream output=new DataOutputStream(s.getOutputStream());
 
 		BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
 
 		String str="",str2="";
 		while(!str.equals("bye")){	
-			str=dataRead.readUTF();		//reads whatever is sent by the client  
+			str=input.readUTF();		//reads whatever is sent by the client  
 			System.out.println("Client says: "+str);	//print the message sent by client
 			str2=br.readLine();			//input server side
-			dataWrite.writeUTF(str2);
-			dataWrite.flush();
+			output.writeUTF(str2);
+			output.flush();
 			}
 
-		dataRead.close();
+		output.close();
 		s.close();
 		ss.close();
 		
