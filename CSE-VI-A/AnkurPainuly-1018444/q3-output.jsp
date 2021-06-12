@@ -8,11 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<center>
-	Sum of <s:property value="x"/>
-	and <s:property value="y"/>
-	is:
-	<s:property value="sum"/>	
+<center>valid user
 </center>
 </body>
 </html>
