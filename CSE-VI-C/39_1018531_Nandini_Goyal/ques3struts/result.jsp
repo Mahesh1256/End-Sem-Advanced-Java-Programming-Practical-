@@ -1,0 +1,15 @@
+<%Nandini goyal
+Once the user details are verified in the form it displays a message that its information is recieved successfully%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ User information is captured successfully.
+</body>
+</html> 
