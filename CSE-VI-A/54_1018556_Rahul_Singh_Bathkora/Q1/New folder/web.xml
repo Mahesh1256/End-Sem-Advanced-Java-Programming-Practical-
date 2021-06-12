@@ -7,7 +7,7 @@
 	  </context-param>
 	  <servlet>
 	  	<servlet-name>RefreshServlet</servlet-name>
-	  	<servlet-class>com.gaurav35.servlets.RefreshServlet</servlet-class>
+	  	<servlet-class>com.rahul54.servlets.RefreshServlet</servlet-class>
 	  	<init-param>
 	  		<param-name>address</param-name>
 	  		<param-value>Bageshwar,Uttrakhand</param-value>
