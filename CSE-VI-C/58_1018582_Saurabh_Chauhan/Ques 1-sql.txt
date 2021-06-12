@@ -1,0 +1,21 @@
+//Saurabh Chauhan
+//Sec-C
+//Roll No-58
+public class DatabaseConnection {
+    protected static Connection initializeDatabase()
+        throws SQLException, ClassNotFoundException
+    {
+        
+        // Database Connection
+        String dbDriver = "com.mysql.jdbc.Driver";
+        String dbURL = "jdbc:mysql:// localhost:1080/";
+        // Database name to access
+        String name = "saurabh";
+        String username = "root";
+        String password = "root";
+  
+        Class.forName(dbDriver);
+        Connection c = DriverManager.getConnection(dbURL + name,username, password);
+        return c;
+    }
+}
