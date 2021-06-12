@@ -25,7 +25,7 @@ public class Server{
 			output.flush();
 			}
 
-		output.close();
+		input.close();
 		s.close();
 		ss.close();
 		
