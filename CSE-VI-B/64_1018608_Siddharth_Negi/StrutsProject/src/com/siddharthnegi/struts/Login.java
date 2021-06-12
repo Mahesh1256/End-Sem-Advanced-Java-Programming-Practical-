@@ -18,7 +18,7 @@ public class Login extends ActionSupport {
 	}
 
 	public String execute() {
-		if (user.getUserId().equals("gsrawat") && user.getPassword().equals("1018608")) {
+		if (user.getUserId().equals("siddharthnegi") && user.getPassword().equals("1018608")) {
 			return SUCCESS;
 		}
 		return LOGIN;
