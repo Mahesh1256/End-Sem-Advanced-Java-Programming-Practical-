@@ -5,14 +5,9 @@
  
 <struts>
     <package name="struts2" extends="struts-default">
-        <action name="calculateSumAction" class="net.codejava.struts.SumAction"
-            method="calculate">
-            <result name="success">/output.jsp</result>
-            <result name="input">/input.jsp</result>
-        </action>
         <action name="loginAction" class="net.codejava.struts.loginAction"
             method="login">
-            <result name="success">/input.jsp</result>
+            <result name="success">/output.jsp</result>
             <result name="input">/login.jsp</result>
         </action>
     </package>
