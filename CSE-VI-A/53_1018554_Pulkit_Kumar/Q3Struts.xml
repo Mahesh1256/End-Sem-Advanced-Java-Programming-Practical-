@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+
+ <struts>
+ <package name="" extends="struts-default">
+ <action name="empinfo"
+ class="Practical12.Employee"
+ method="execute">
+ <result name="success">/Q3R=result.jsp</result>
+ <result name="input">/Q3Input.jsp</result>
+ </action>
+ </package>
+
+</struts>
